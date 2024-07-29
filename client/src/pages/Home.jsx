@@ -9,6 +9,7 @@ import DonutChart from "../components/charts/DonutChart";
 import BubbleChart from "../components/charts/BubbleChart";
 import axios from "axios";
 import TopicPieChart from "../components/charts/TopicPieChart";
+import Loader from "../partials/Loader";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -27,7 +28,7 @@ function Home() {
   useEffect(() => {
     fetchData();
   }, []);
-  if (data.length === 0) return <>Loading</>;
+  if (data.length === 0) return <Loader/>;
 
   return (
     <div className="w-full h-full flex flex-wrap">

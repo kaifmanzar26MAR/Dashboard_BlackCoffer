@@ -18,8 +18,8 @@ const Sidebar = () => {
     },
     {
       icon: BsPersonFillDash,
-      href: "/employees",
-      label: "Employees",
+      href: "/dataview",
+      label: "Data View",
     },
   ];
   return (

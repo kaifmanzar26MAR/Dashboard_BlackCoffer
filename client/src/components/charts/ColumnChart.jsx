@@ -7,7 +7,7 @@ const ColumnChart = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/data/getSectorCount");
+      const res = await axios.get("http://localhost:9000/api/data/getCountryCount");
       if (!res) throw new Error("Data not found");
 
       setData(res?.data.data);
@@ -23,10 +23,7 @@ const ColumnChart = () => {
 
   const config = {
     data,
-    title: {
-      visible: true,
-      text: "Sector Plot",
-    },
+    title:"Country Frequency visualization using ColumnChart",
     xField: '_id',
     yField: 'count',
     seriesField: 'count',

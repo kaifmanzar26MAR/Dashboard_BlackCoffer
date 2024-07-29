@@ -3,7 +3,7 @@ import Main from "../layout/Main";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Logistics from "../pages/Logistics";
-import Employees from "../pages/Employees";
+import DataVisual from "../pages/DataVisual";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         path:"/logistics",
         element:<Logistics/>
       },{
-        path:"/employees",
-        element:<Employees/>
+        path:"/dataview",
+        element:<DataVisual/>
       }
     ],
   },

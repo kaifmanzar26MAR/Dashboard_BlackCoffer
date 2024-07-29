@@ -79,11 +79,11 @@ const getTopicCount = asyncHandler(async (req, res) => {
   console.log(topicCount);
 
   if(!topicCount){
-    throw new ApiError(400, "Unable  to get the sector count");
+    throw new ApiError(400, "Unable  to get the topic count");
 
   }
 
-  return res.status(201).json(new ApiResponse(200, topicCount, "get the sector count!!"))
+  return res.status(201).json(new ApiResponse(200, topicCount, "get the topic count!!"))
 });
 
 
@@ -104,10 +104,34 @@ const getRegionCount = asyncHandler(async (req, res) => {
   console.log(regionCount);
 
   if(!regionCount){
-    throw new ApiError(400, "Unable  to get the sector count");
+    throw new ApiError(400, "Unable  to get the region count");
 
   }
 
-  return res.status(201).json(new ApiResponse(200, regionCount, "get the sector count!!"))
+  return res.status(201).json(new ApiResponse(200, regionCount, "get the region count!!"))
 });
-export { getAllData, addData , getSectorCount, getTopicCount, getRegionCount};
+
+
+const getCountryCount = asyncHandler(async (req, res) => {
+  
+  const countryCount = await RawData.aggregate([
+    {
+      '$group': {
+        '_id': '$region',
+        'count': {
+          '$sum': 1
+        }
+      }
+    }
+  ]);
+
+  console.log(countryCount);
+
+  if(!countryCount){
+    throw new ApiError(400, "Unable  to get the country count");
+
+  }
+
+  return res.status(201).json(new ApiResponse(200, countryCount, "get the country count!!"))
+});
+export { getAllData, addData , getSectorCount, getTopicCount, getRegionCount, getCountryCount};
