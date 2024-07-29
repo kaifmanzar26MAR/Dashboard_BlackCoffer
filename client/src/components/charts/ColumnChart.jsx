@@ -7,7 +7,7 @@ const ColumnChart = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/data/getCountryCount");
+      const res = await axios.get("https://dashboard-blackcoffer.onrender.com/api/data/getCountryCount");
       if (!res) throw new Error("Data not found");
 
       setData(res?.data.data);

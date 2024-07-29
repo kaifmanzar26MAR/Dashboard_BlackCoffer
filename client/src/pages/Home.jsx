@@ -16,7 +16,7 @@ function Home() {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/data/getData");
+      const res = await axios.get("https://dashboard-blackcoffer.onrender.com/api/data/getData");
       console.log(res?.data.data);
       if (!res) throw new Error("Data not found");
 

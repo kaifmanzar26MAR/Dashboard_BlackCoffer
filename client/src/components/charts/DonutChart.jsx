@@ -14,7 +14,7 @@ const DonutChart = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:9000/api/data/getRegionCount"
+        "https://dashboard-blackcoffer.onrender.com/api/data/getRegionCount"
       );
       console.log(res?.data.data);
       if (!res) throw new Error("Data not found");

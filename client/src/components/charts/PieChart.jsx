@@ -7,7 +7,7 @@ const PieChart = () => {
    
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:9000/api/data/getSectorCount");
+        const res = await axios.get("https://dashboard-blackcoffer.onrender.com/api/data/getSectorCount");
         console.log(res?.data.data)
         if (!res) throw new Error("Data not found");
   
